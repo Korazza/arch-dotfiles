@@ -26,13 +26,13 @@ foreground = default
 gradient = 1
 gradient_count = 8
 gradient_color_1 = '#4d78cc'
-gradient_color_2 = '#4d58cc'
-gradient_color_3 = '#624dcc'
-gradient_color_4 = '#814dcc'
-gradient_color_5 = '#a14dcc'
-gradient_color_6 = '#c14dcc'
-gradient_color_7 = '#cc4db7'
-gradient_color_8 = '#cc4d98'
+gradient_color_2 = '#4d6bcc'
+gradient_color_3 = '#4d5ecc'
+gradient_color_4 = '#4d50cc'
+gradient_color_5 = '#574dcc'
+gradient_color_6 = '#644dcc'
+gradient_color_7 = '#714dcc'
+gradient_color_8 = '#7f4dcc'
 
 [smoothing]
 monstercat = 1
