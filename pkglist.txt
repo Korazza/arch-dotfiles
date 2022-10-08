@@ -20,6 +20,7 @@ dunst
 efibootmgr
 exa
 fakeroot
+figlet
 file
 findutils
 firefox-developer-edition
@@ -55,6 +56,7 @@ linux-firmware
 linux-headers
 lxappearance-gtk3
 m4
+maim
 make
 minikube
 mkcert
@@ -118,7 +120,9 @@ vlc
 wget
 which
 wireless_tools
+xclip
 xdg-utils
+xdotool
 xf86-video-vesa
 xorg-bdftopcf
 xorg-docs
