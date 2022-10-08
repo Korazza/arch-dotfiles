@@ -3,9 +3,9 @@ __zsh_prompt() {
   local prompt_username
   
   if [ ! -z "${GITHUB_USER}" ]; then 
-      prompt_username="@${GITHUB_USER}"
+    prompt_username="@${GITHUB_USER}"
   else
-      prompt_username="%n"
+    prompt_username="%n"
   fi
 
   # user
