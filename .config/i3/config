@@ -158,7 +158,7 @@ for_window [class="^.*"] border pixel 0
 
 # apps shortcuts
 bindsym $mod+Return exec kitty
-bindsym $mod+e exec thunar
+bindsym $mod+e exec kitty ranger
 bindsym $mod+f exec firefox-developer-edition
 bindsym $mod+s exec spotify
 bindsym $mod+c exec discord
