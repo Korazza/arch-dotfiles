@@ -8,7 +8,6 @@ goreleaser-bin
 minecraft-launcher
 nordvpn-bin
 obs-studio-git
-picom-ibhagwan-git
 pipewire-jack-dropin
 python38
 rtl8192eu

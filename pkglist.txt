@@ -85,6 +85,7 @@ pamixer
 papirus-icon-theme
 patch
 pavucontrol
+picom
 pipewire
 pipewire-alsa
 pipewire-jack
