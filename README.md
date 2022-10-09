@@ -1,5 +1,4 @@
 # dotfiles
-![Screen](./screenshot.png)
 + **WM** ~ [i3-gaps](https://github.com/Airblader/i3) (i3 fork)
 + **Compositor** ~ [picom](https://github.com/yshui/picom)
 + **Terminal** ~ [kitty](https://github.com/kovidgoyal/kitty)
@@ -12,3 +11,5 @@
 + **Icons** ~ [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 + **Cursor** ~ [Bibata Modern Classic](https://github.com/ful1e5/Bibata_Cursor)
 + **Wallpaper** ~ [Cube Neon](https://whvn.cc/y86g17) by [jrmnt](https://wallhaven.cc/user/jrmnt)
+
+![Screen](./screenshot.png)
