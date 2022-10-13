@@ -1,6 +1,7 @@
 i3-gaps
 i3lock
 picom
+nitrogen
 kitty
 polybar
 rofi
