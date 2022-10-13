@@ -8,6 +8,8 @@ rofi
 dunst
 ranger
 cava
+neofetch
+btop
 arc-gtk-theme
 papirus-icon-theme
 bibata-cursor-theme
