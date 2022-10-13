@@ -40,6 +40,7 @@ alias lttt='exa -TDL3 --icons --color=always --group-directories-first --git-ign
 alias ltttt='exa -TDL4 --icons --color=always --group-directories-first --git-ignore'
 
 # path vars
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=$PATH:~/go/bin
