@@ -10,6 +10,7 @@ blueman
 bluez
 bluez-utils
 btop
+chntpw
 cronie
 cups
 discord
@@ -97,6 +98,8 @@ polybar
 pyenv
 python-pip
 python-pipenv
+qt5-wayland
+qt5ct
 ranger
 rofi
 samba
@@ -106,6 +109,7 @@ smartmontools
 speedtest-cli
 stress
 sudo
+swaybg
 testdisk
 texinfo
 ttf-dejavu
@@ -121,6 +125,8 @@ vlc
 wget
 which
 wireless_tools
+wlroots
+wofi
 xclip
 xdg-utils
 xdotool
@@ -166,5 +172,4 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
-xterm
 zsh

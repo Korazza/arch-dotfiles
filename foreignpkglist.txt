@@ -5,11 +5,12 @@ bibata-cursor-theme
 cava
 eclipse-java
 goreleaser-bin
+hyprland
 minecraft-launcher
 nordvpn-bin
+nvidia-vaapi-driver-git
 obs-studio-git
 pipewire-jack-dropin
-python38
 rtl8192eu
 spotify
 teams
@@ -18,4 +19,6 @@ ttf-ms-fonts
 unigine-heaven
 unityhub
 visual-studio-code-bin
+waybar-hyprland-git
+wlr-randr
 yay
