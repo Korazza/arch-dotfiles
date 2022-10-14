@@ -10,6 +10,11 @@ ranger
 cava
 neofetch
 btop
+pavucontrol
+blueman
 arc-gtk-theme
 papirus-icon-theme
 bibata-cursor-theme
+ttf-fira-code
+ttf-fira-sans
+ttf-font-awesome
