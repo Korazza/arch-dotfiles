@@ -169,10 +169,10 @@ mode "$mode_resize" {
 bindsym $mod+r mode "$mode_resize"
 
 # gaps
-gaps outer 15
+gaps outer 0
 gaps inner 10
-gaps top 47
-gaps bottom 47
+gaps top 32
+gaps bottom 32
 default_border none
 default_floating_border none
 hide_edge_borders vertical
