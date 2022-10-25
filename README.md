@@ -2,7 +2,7 @@
 
 - **WM/Compositor** ~ [Hyprland](https://github.com/hyprwm/Hyprland)
 - **Terminal** ~ [kitty](https://github.com/kovidgoyal/kitty)
-- **Status Bar** ~ [Eww](https://github.com/elkowar/eww)
+- **Widgets/Status Bar** ~ [Eww](https://github.com/elkowar/eww)
 - **Application Launcher** ~ [Wofi](https://hg.sr.ht/~scoopta/wofi)
 - **Notification Daemon** ~ [Dunst](https://github.com/dunst-project/dunst)
 - **File Manager** ~ [ranger](https://github.com/ranger/ranger)
