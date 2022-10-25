@@ -1,15 +1,15 @@
-# dotfiles
-+ **WM** ~ [i3-gaps](https://github.com/Airblader/i3) (i3 fork)
-+ **Compositor** ~ [picom](https://github.com/yshui/picom)
-+ **Terminal** ~ [kitty](https://github.com/kovidgoyal/kitty)
-+ **Status Bar** ~ [Polybar](https://github.com/polybar/polybar)
-+ **Application Launcher** ~ [Rofi](https://github.com/davatorium/rofi)
-+ **Notification Daemon** ~ [Dunst](https://github.com/dunst-project/dunst)
-+ **File Manager** ~ [ranger](https://github.com/ranger/ranger)
-+ **Audio Visualizer** ~ [C.A.V.A.](https://github.com/karlstav/cava)
-+ **GTK** ~ [Arc-Dark](https://github.com/horst3180/arc-theme)
-+ **Icons** ~ [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-+ **Cursor** ~ [Bibata Modern Classic](https://github.com/ful1e5/Bibata_Cursor)
-+ **Wallpaper** ~ [Cube Neon](https://whvn.cc/y86g17) by [jrmnt](https://wallhaven.cc/user/jrmnt)
+# xenomorph
+
+- **WM/Compositor** ~ [Hyprland](https://github.com/hyprwm/Hyprland)
+- **Terminal** ~ [kitty](https://github.com/kovidgoyal/kitty)
+- **Status Bar** ~ [Eww](https://github.com/elkowar/eww)
+- **Application Launcher** ~ [Wofi](https://hg.sr.ht/~scoopta/wofi)
+- **Notification Daemon** ~ [Dunst](https://github.com/dunst-project/dunst)
+- **File Manager** ~ [ranger](https://github.com/ranger/ranger)
+- **Audio Visualizer** ~ [C.A.V.A.](https://github.com/karlstav/cava)
+- **GTK** ~ [Kripton](https://github.com/EliverLara/Kripton)
+- **Icons** ~ [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+- **Cursor** ~ [Bibata Modern Classic](https://github.com/ful1e5/Bibata_Cursor)
+- **Wallpaper** ~ [ALIEN - fan art](https://www.artstation.com/artwork/badmPo) by [shaun mooney](https://twitter.com/moons_artwork)
 
 ![Screen](./screenshot.png)
