@@ -1,0 +1,12 @@
+bibata-cursor-theme
+cava
+eww-wayland
+hyprland-nvidia-git
+libcamera-git
+nerd-fonts-space-mono
+nvim-packer-git
+polkit-explorer-git
+spotify
+ttf-ms-fonts
+wev
+wlr-randr
