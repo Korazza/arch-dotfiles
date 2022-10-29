@@ -24,10 +24,13 @@ echo -e "\nSetting zsh as default shell"
 chsh -s $(type zsh | awk '{print $3}')
 
 echo -e "\nCopying dotfiles"
+rm -rf ~/dotfiles/.git*
+rm ~/dotfiles/LICENSE
+rm ~/dotfiles/README.MD
+rm ~/dotfiles/foreignpkglist.txt
+rm ~/dotfiles/pkglist.txt
+rm ~/dotfiles/screenshot.png
 cp -rali ~/dotfiles/* ~
-
-echo -e "\nCleaning"
-rm -rf ~/.git
 
 echo -e "\nDone"
 echo -e "\n"; exit 0%
