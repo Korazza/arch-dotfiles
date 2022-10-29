@@ -1,6 +1,6 @@
 # xenomorph
 
-- **WM/Compositor** ~ [Hyprland](https://github.com/hyprwm/Hyprland)
+- **Compositor** ~ [Hyprland](https://github.com/hyprwm/Hyprland)
 - **Terminal** ~ [kitty](https://github.com/kovidgoyal/kitty)
 - **Widgets/Status Bar** ~ [Eww](https://github.com/elkowar/eww)
 - **Application Launcher** ~ [Wofi](https://hg.sr.ht/~scoopta/wofi)
