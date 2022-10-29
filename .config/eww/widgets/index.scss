@@ -1,0 +1,11 @@
+@import './resources';
+@import './weather';
+@import './emails';
+
+.widgets {
+  // DEBUG
+  //background-color: antiquewhite;
+  font-family: 'FontAwesome 6 Free', 'SpaceMono Nerd Font';
+  margin: 15px;
+  color: black;
+}

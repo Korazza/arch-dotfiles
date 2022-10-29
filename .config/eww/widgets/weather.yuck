@@ -1,0 +1,46 @@
+(defpoll update-weather :interval "10m" `sh ~/.config/eww/widgets/weather`)
+
+(defpoll weather-icon :interval "10m" "cat ~/.cache/weather/weather-icon")
+
+(defpoll weather-degree :interval "10m" "cat ~/.cache/weather/weather-degree")
+
+(defpoll weather-color :interval "10m" "cat ~/.cache/weather/weather-color")
+
+(defpoll weather-status :interval "10m" "cat ~/.cache/weather/weather-status")
+
+(defwidget weather_widget []
+  (box
+    :class "widget-weather"
+    :halign "start"
+    :valign "start"
+    :space-evenly false
+    (label :text "${update-weather}" :style "font-size: 0")
+    (box
+      :orientation "v"
+      :halign "center"
+      :valign "center"
+      :space-evenly false
+      (box
+        :halign "center"
+        :valign "center"
+        :space-evenly false
+        (label
+          :class "weather-icon"
+          :text "${weather-icon}"
+          :style "color: ${weather-color}"
+        )
+        (label
+          :class "weather-degree"
+          :text "${weather-degree}"
+          :style "color: ${weather-color}"
+        )
+      )
+      (label
+        :class "weather-status"
+        :halign "center"
+        :valign "center"
+        :text "${weather-status}"
+      )
+    )
+  )
+)

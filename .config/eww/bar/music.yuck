@@ -1,0 +1,69 @@
+(defpoll status
+  :interval "1s"
+  `playerctl status -p spotify &> /dev/null; echo $?`
+)
+
+(defpoll playing
+  :interval "1s"
+  `playerctl status -p spotify 2> /dev/null`
+)
+
+(defpoll artist
+  :interval "1s"
+  `playerctl metadata -f "{{xesam:artist}}" -p spotify 2> /dev/null`
+)
+
+(defpoll title
+  :interval "1s"
+  `playerctl metadata -f "{{xesam:title}}" -p spotify 2> /dev/null`
+)
+
+(deflisten art_image "bar/artimage")
+
+(defwidget music_widget []
+  (revealer
+    :reveal {status == 0}
+    :transition "crossfade"
+    :duration "250ms"
+    :hexpand true
+    :halign "center"
+    (box
+      :class "bar-music"
+      :valign "fill"
+      :space-evenly false
+      :spacing 10
+      (image
+        :path art_image
+        :image-width 24
+        :image-height 24
+      )
+      (label
+        :class "title"
+        :text "${title}"
+      )
+      (label
+        :class "separator"
+        :text "─"
+      )
+      (label
+        :class "artist"
+        :text "${artist}"
+      )
+      (button
+        :class "music-button"
+        :onclick `playerctl previous`
+        ""
+      )
+      (button
+        :class "music-button"
+        :onclick `playerctl play-pause`
+        "${playing == 'Playing' ? '' : ''}"
+      )
+      (button
+        :class "music-button"
+        :onclick `playerctl next`
+        ""
+      )
+    )
+  )
+)

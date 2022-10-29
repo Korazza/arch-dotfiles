@@ -1,0 +1,47 @@
+$workspace-unoccupied-background: #27272a;
+$workspace-unoccupied-foreground: #44403c;
+$workspace-occupied-background: #0d2f3b;
+$workspace-occupied-foreground: #5cf2c2;
+$workspace-focused-background: #2cbf6c;
+$workspace-focused-foreground: #44403c;
+
+.bar-workspaces {
+  font-size: 14px;
+
+  button {
+    font-family: 'FontAwesome 6 Free';
+    padding: 0.5em;
+    border-radius: 0.6em;
+  }
+
+  button.ws {
+    background-color: $workspace-unoccupied-background;
+    color: $workspace-unoccupied-foreground;
+  }
+
+  button.ws1,
+  button.ws2,
+  button.ws3,
+  button.ws4,
+  button.ws5,
+  button.ws6,
+  button.ws7,
+  button.ws8,
+  button.ws9 {
+    background-color: $workspace-occupied-background;
+    color: $workspace-occupied-foreground;
+  }
+
+  button.ws11,
+  button.ws22,
+  button.ws33,
+  button.ws44,
+  button.ws55,
+  button.ws66,
+  button.ws77,
+  button.ws88,
+  button.ws99 {
+    background-color: $workspace-focused-background;
+    color: $workspace-focused-foreground;
+  }
+}

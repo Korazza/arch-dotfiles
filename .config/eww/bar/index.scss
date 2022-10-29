@@ -1,0 +1,15 @@
+@import './workspaces';
+@import './time';
+@import './music';
+@import './uptime';
+@import './audio';
+@import './bluetooth';
+@import './network';
+@import './powerbutton';
+
+.bar {
+  // DEBUG
+  //background-color: antiquewhite;
+  font-family: 'FontAwesome 6 Free', 'SpaceMono Nerd Font';
+  margin: 10px 15px 0 15px;
+}

@@ -1,0 +1,58 @@
+$powermenu-background: #18181b;
+$powermenu-button-background: #0d2f3b;
+$powermenu-foreground: #4be1b1;
+$powermenu-border: #497868;
+$powermenu-close-poweroff: #c14743;
+$powermenu-lock: #299d7c;
+$powermenu-logout: #9750bb;
+$powermenu-reboot: #d89165;
+
+.powermenu-container {
+  background-color: rgba($powermenu-background, 0.82);
+}
+
+.powermenu-button-group {
+  font-family: 'Font Awesome 6 Free';
+  font-size: 2em;
+
+  label {
+    font-size: 2em;
+  }
+
+  button {
+    padding: 0.4em;
+    margin: 0 0.2em;
+    border-radius: 0.6em;
+    background-color: rgba($powermenu-button-background, 0.92);
+    color: $powermenu-foreground;
+    border: 1px solid transparent;
+
+    &:hover {
+      transition-duration: 200ms;
+      transition-timing-function: ease-in-out;
+      transition-property: all;
+      background-color: rgba($powermenu-button-background, 0.72);
+      border: 1px solid $powermenu-border;
+    }
+
+    &.poweroff, &.close {
+      color: $powermenu-close-poweroff;
+    }
+
+    &.lock {
+      color: $powermenu-lock;
+    }
+
+    &.logout {
+      color: $powermenu-logout;
+    }
+
+    &.reboot {
+      color: $powermenu-reboot;
+    }
+    
+    &:first-child {
+      padding: 0.4em 0.8em;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import './powermenu';
+@import './bar';
+@import './widgets';
+
+$background: #0d2f3b;
+$foreground: #5cf2c2;
+
+* { all: unset; }
+
+tooltip {
+  background-color: $background;
+  color: $foreground;
+  border-radius: 0.6em;
+}
+
+scale trough {
+  background-color: rgba($foreground, 0.2);
+  min-width: 100px;
+  min-height: 6px;
+  border-radius: 0.6em;
+}
+
+scale trough highlight {
+  background-color: $foreground;
+  border-radius: 0.6em;
+}
+
+progressbar trough {
+  background-color: rgba($foreground, 0.2);
+  min-width: 100px;
+  min-height: 6px;
+  border-radius: 0.6em;
+}
+
+progressbar trough highlight {
+  background-color: $foreground;
+  border-radius: 0.6em;
+}

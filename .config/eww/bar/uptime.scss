@@ -1,0 +1,20 @@
+$uptime-background: #0d2f3b;
+$uptime-foreground: #5cf2c2;
+$uptime-icon: #b972dd;
+
+.bar-uptime {
+  background-color: $uptime-background;
+  padding: 0.2em 0.4em;
+  margin-right: 15px;
+  font-family: 'SpaceMono Nerd Font';
+  font-size: 14px;
+  color: $uptime-foreground;
+  border-radius: 0.6em;
+
+  .icon-uptime {
+    font-family: 'FontAwesome 6 Free';
+    margin-right: 0.4em;
+    font-size: 16px;
+    color: $uptime-icon;
+  }
+}

@@ -1,0 +1,32 @@
+(defpoll bt_connected
+  :interval "2s"
+  `bluetoothctl info | grep 'Device' | wc -c`
+)
+
+(defpoll bt_device
+  :interval "5s"
+  `bluetoothctl info | grep 'Alias:' | awk '{print $2}'`
+)
+
+(defwidget bluetooth_widget []
+  (revealer
+    :reveal {bt_connected != 0}
+    :transition "slideleft"
+    :duration "250ms"
+    :halign "end"
+    :valign "fill"
+    (button
+      :onclick "exec blueman-manager &"
+      (box
+        :class "bar-bluetooth"
+        :valign "fill"
+        :space-evenly false
+        (label
+          :class "icon-bluetooth"
+          :text ""
+        )
+        "${bt_device}"
+      )
+    )
+  )
+)

@@ -1,0 +1,8 @@
+(deflisten workspace "bar/workspace")
+
+
+(defwidget workspaces_widget []
+  (literal
+    :content workspace
+  )
+)

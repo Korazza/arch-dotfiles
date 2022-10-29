@@ -1,0 +1,3 @@
+(include "./powermenu/index.yuck")
+(include "./bar/index.yuck")
+(include "./widgets/index.yuck")

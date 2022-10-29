@@ -1,0 +1,49 @@
+(defpoll time
+  :interval "30s"
+`date "+%H:%M"`)
+
+(defvar reveal-calendar false)
+
+(defwidget time_widget []
+  (box
+    :class "bar-time"
+    :valign "fill"
+    :space-evenly false
+    (button
+      :onclick `eww update reveal-calendar=${!reveal-calendar}; ${reveal-calendar ? "eww open-many calendar0 calendar1" : "eww close calendar0 calendar1"}`
+      "${time}"
+    )
+  )
+)
+
+(defwindow calendar0
+  :monitor 0
+  :geometry (geometry
+    :anchor "top center"
+    :x "50%"
+    :y "10px"
+  )
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+  (calendar_widget)
+)
+
+(defwindow calendar1
+  :monitor 1
+  :geometry (geometry
+    :anchor "top center"
+    :x "50%"
+    :y "10px"
+  )
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+  (calendar_widget)
+)
+
+(defwidget calendar_widget []
+  (calendar
+    :class "calendar"
+  )
+)

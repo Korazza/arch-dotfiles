@@ -1,0 +1,28 @@
+$audio-background: #0d2f3b;
+$audio-foreground: #5cf2c2;
+$audio-icon: #5fcfda;
+$audio-muted-icon: #e36965;
+
+.bar-audio {
+  background-color: $audio-background;
+  color: $audio-foreground;
+  font-family: 'SpaceMono Nerd Font';
+  padding: 0.4em 0.6em;
+  margin-right: 15px;
+  border-radius: 0.6em;
+
+  .icon-audio {
+    font-family: 'FontAwesome 6 Free';
+    margin-right: 0.4em; 
+    font-size: 16px;
+    color: $audio-icon;
+
+    &.muted {
+      color: $audio-muted-icon;
+    }
+  }
+
+  .audio-slider {
+    margin-left: 0.4em;
+  }
+}

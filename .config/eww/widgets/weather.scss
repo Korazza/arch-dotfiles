@@ -1,0 +1,25 @@
+$weather-background: #0d2f3b;
+$weather-foreground: #5cf2c2;
+
+.widget-weather {
+  font-family: 'SpaceMono Nerd Font';
+  background-color: $weather-background;
+  color: $weather-foreground;
+  padding: 0 0.8em 0.4em 0.8em;
+  font-size: 14px;
+  border-radius: 1.4em;
+
+  .weather-icon {
+    font-size: 32px;
+    margin-right: 15px;
+  }
+
+  .weather-degree {
+    font-family: 'FontAwesome 6 Free';
+    font-size: 18px;
+  }
+
+  .weather-status {
+    font-size: 18px;
+  }
+}

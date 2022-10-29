@@ -1,0 +1,18 @@
+$network-background: #0d2f3b;
+$network-foreground: #5cf2c2;
+
+.bar-network {
+  background-color: $network-background;
+  padding: 0.2em 0.4em;
+  margin-right: 15px;
+  font-family: 'SpaceMono Nerd Font';
+  font-size: 14px;
+  color: $network-foreground;
+  border-radius: 0.6em;
+
+  .icon-network {
+    font-family: 'FontAwesome 6 Free';
+    margin-right: 0.4em;
+    font-size: 16px;
+  }
+}

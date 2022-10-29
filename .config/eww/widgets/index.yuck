@@ -1,0 +1,59 @@
+(include "./widgets/resources.yuck")
+(include "./widgets/weather.yuck")
+(include "./widgets/emails.yuck")
+
+(defwindow widgets0
+  :monitor 0
+  :geometry (geometry
+    :anchor "top left"
+    :width "100%"
+    :height "100%"
+  )
+  :stacking "bottom"
+  :exclusive false
+  :focusable false
+  (widgets)
+)
+
+(defwindow widgets1
+  :monitor 1
+  :geometry (geometry
+    :anchor "top left"
+    :width "100%"
+    :height "100%"
+  )
+  :stacking "bottom"
+  :exclusive false
+  :focusable false
+  (widgets)
+)
+
+(defwidget widgets []
+  (box
+    :class "widgets"
+    :halign "fill"
+    :valign "fill"
+    (centerbox
+      :hexpand true
+      :orientation "h"
+      (box
+        :orientation "v"
+        :halign "start"
+        :valign "fill"
+        :space-evenly false
+        (resources_widget)
+      )
+      ""
+      (box
+        :orientation "v"
+        :hexpand true
+        :halign "end"
+        :valign "fill"
+        :space-evenly false
+        :spacing 15
+        (weather_widget)
+        (emails_widget)
+      )
+    )
+  )
+)

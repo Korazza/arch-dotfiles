@@ -1,0 +1,98 @@
+#!/usr/bin/bash
+
+cache_weather="/home/$USER/.cache/weather"
+cache_weather_status=$cache_weather/weather-status
+cache_weather_degree=$cache_weather/weather-degree
+cache_weather_color=$cache_weather/weather-color
+cache_weather_icon=$cache_weather/weather-icon
+
+if [ ! -d $cache_weather ]; then
+  mkdir -p $cache_weather
+fi
+
+KEY="$OPENWEATHER_APPID"
+ID="$OPENWEATHER_CITYID"
+UNIT="metric" # or "imperial"
+
+weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?appid="$KEY"&id="$ID"&units="$UNIT"")
+echo $weather
+
+if [ ! -z "$weather" ]; then
+  weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
+  weather_icon_code=$(echo "$weather" | jq -r ".weather[].icon" | head -1)
+	weather_description=$(echo "$weather" | jq -r ".weather[].description" | head -1 | sed -e "s/\b\(.\)/\u\1/g")
+
+	if [ "$weather_icon_code" == "50d"  ]; then
+		weather_icon=" "
+    weather_hex="#84afdb"  #a7b8b2
+  elif [ "$weather_icon_code" == "50n"  ]; then
+    weather_icon=" "
+    weather_hex="#84afdb"
+	elif [ "$weather_icon_code" == "01d"  ]; then
+    weather_icon=" "
+    weather_hex="#ffd86b"
+  elif [ "$weather_icon_code" == "01n"  ]; then
+    weather_icon=" "
+    weather_hex="#fcdcf6"
+  elif [ "$weather_icon_code" == "02d"  ]; then
+        weather_icon=" "
+        weather_hex="#adadff"
+  elif [ "$weather_icon_code" == "02n"  ]; then
+    weather_icon=" "
+    weather_hex="#adadff"
+  elif [ "$weather_icon_code" == "03d"  ]; then
+    weather_icon=" "
+    weather_hex="#adadff"
+  elif [ "$weather_icon_code" == "03n"  ]; then
+    weather_icon=" "
+    weather_hex="#adadff"
+  elif [ "$weather_icon_code" == "04d"  ]; then
+    weather_icon=" "
+    weather_hex="#adadff"
+  elif [ "$weather_icon_code" == "04n"  ]; then
+    weather_icon=" "
+    weather_hex="#adadff"
+  elif [ "$weather_icon_code" == "09d"  ]; then
+    weather_icon=" "
+    weather_hex="#6b95ff"
+  elif [ "$weather_icon_code" == "09n"  ]; then
+    weather_icon=" "
+    weather_hex="#6b95ff"
+  elif [ "$weather_icon_code" == "10d"  ]; then
+    weather_icon=" "
+    weather_hex="#6b95ff"
+  elif [ "$weather_icon_code" == "10n"  ]; then
+    weather_icon=" "
+    weather_hex="#6b95ff"
+  elif [ "$weather_icon_code" == "11d"  ]; then
+    weather_icon=""
+    weather_hex="#ffeb57"
+  elif [ "$weather_icon_code" == "11n"  ]; then
+    weather_icon=""
+    weather_hex="#ffeb57"
+  elif [ "$weather_icon_code" == "13d"  ]; then
+    weather_icon=" "
+    weather_hex="#e3e6fc"
+  elif [ "$weather_icon_code" == "13n"  ]; then
+    weather_icon=" "
+    weather_hex="#e3e6fc"
+  elif [ "$weather_icon_code" == "40d"  ]; then
+    weather_icon=" "
+    weather_hex="#84afdb"
+  elif [ "$weather_icon_code" == "40n"  ]; then
+    weather_icon=" "
+    weather_hex="#84afdb"
+  else 
+    weather_icon=" "
+    weather_hex="#adadff"
+  fi
+    echo "$weather_icon" >  $cache_weather_icon
+    echo "$weather_description" > $cache_weather_status
+    echo "$weather_temp""°C" > $cache_weather_degree
+    echo "$weather_hex" > $cache_weather_color
+else
+  echo "Weather Unavailable" > $cache_weather_status
+  echo "?" > $cache_weather_icon
+  echo "-" > $cache_weather_degree
+  echo "#adadff" > $cache_weather_color
+fi

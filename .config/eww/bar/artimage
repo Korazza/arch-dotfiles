@@ -1,0 +1,53 @@
+#!/usr/bin/bash
+
+IMAGE_PATH="/home/$USER/.cache"
+
+check_playing() {
+  export playing=$(playerctl status -p spotify &> /dev/null; echo $?)
+}
+
+image() {
+  title=$(playerctl metadata -f "{{xesam:title}}" -p spotify 2> /dev/null)
+  export image_name=${title// /_}
+  export image_url=$(playerctl metadata -f "{{mpris:artUrl}}" -p spotify 2> /dev/null)
+  export image_file="$IMAGE_PATH/bar_music-$image_name"
+}
+
+download_image() {
+  curl --silent $1 -o $2 2> /dev/null
+}
+
+check_playing
+
+if [ $playing == "0" ]; then
+  image
+  download_image "$image_url" "$image_file"
+  echo "$image_file"
+  prev_image_file=$image_file
+fi
+
+while true; do
+
+if [ "$prev_image_file" != "$image_file" ]; then
+  rm $prev_image_file 2> /dev/null
+  prev_image_file=$image_file
+fi
+
+check_playing
+
+if [ $playing == "1" ]; then
+  sleep 1
+  continue
+fi
+
+image
+
+if [ ! -f "$image_file" ] && [ "$prev_image_file" != "$image_file" ]; then
+  download_image "$image_url" "$image_file"
+else
+  sleep 1
+fi
+
+echo "$image_file"
+
+done

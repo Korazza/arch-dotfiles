@@ -1,0 +1,48 @@
+(defwindow powermenu0
+  :monitor 0
+  :geometry (geometry
+    :anchor "center"
+    :width "120%"
+    :height "120%"
+  )
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  (powermenu)
+)
+
+(defwindow powermenu1
+  :monitor 1
+  :geometry (geometry
+    :anchor "center"
+    :width "120%"
+    :height "120%"
+  )
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  (powermenu)
+)
+
+(defwidget powermenu []
+  (box
+    :class "powermenu-container"
+    :width "100%"
+    :height "100%"
+    :hexpand "true"
+    :vexpand "true"
+    :valign "fill"
+    :halign "fill"
+    (box
+      :class "powermenu-button-group"
+      :valign "center"
+      :halign "center"
+      :active "true"
+      (button :class "close" :onclick "eww close powermenu0 powermenu1" "")
+      (button :class "lock" :onclick "eww close powermenu0 powermenu1; swaylock -f" "")
+      (button :class "logout" :onclick "loginctl kill-session self" "")
+      (button :class "reboot" :onclick "reboot" "")
+      (button :class "poweroff" :onclick "poweroff" "")
+    )
+  )
+)

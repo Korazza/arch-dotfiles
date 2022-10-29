@@ -1,0 +1,74 @@
+#!/usr/bin/bash
+
+icons=("" "" "" "4" "5" "6" "7" "" "")
+
+for num in $(hyprctl workspaces | grep ID | awk '{print $3}'); do 
+  export o"$num"="$num"
+done
+ 
+for num in $(hyprctl monitors | grep -B 4 "focused: yes" | awk 'NR==1{print $3}'); do 
+  export f"$num"="$num"
+  export fnum=f"$num"
+  export mon=$(hyprctl monitors | grep -B 2 "\($num\)" | awk 'NR==1{print $2}')
+done
+
+workspaces() {
+if [[ ${1:0:9} == "workspace" ]] && [[ ${1:11} != "special" ]]; then
+  unset -v "$fnum" 
+  num=${1:11}
+  export f"$num"="$num"
+  export fnum=f"$num"
+
+elif [[ ${1:0:10} == "focusedmon" ]]; then
+  unset -v "$fnum"
+  string=${1:12}
+  num=${string##*,}
+  export mon=${string/,*/}
+  export f"$num"="$num"
+  export fnum=f"$num"
+
+elif [[ ${1:0:13} == "moveworkspace" ]] && [[ ${1##*,} == "$mon" ]]; then
+  unset -v "$fnum"
+  string=${1:15}
+  num=${string/,*/}
+  export f"$num"="$num"
+  export fnum=f"$num"
+
+elif [[ ${1:0:15} == "createworkspace" ]]; then
+  num=${1:17}
+  export o"$num"="$num"
+  export onum=o"$num"
+
+elif [[ ${1:0:16} == "destroyworkspace" ]]; then
+  num=${1:18}
+  unset -v o"$num"
+fi
+}
+
+module() {
+echo 	"(eventbox\
+  :vexpand true\
+  :halign \"start\"\
+  :valign \"center\"\
+  :onscroll \"echo {} | sed -e 's/up/-1/g' -e 's/down/+1/g' | xargs hyprctl dispatch workspace\"\
+  (box\
+    :class \"bar-workspaces\"\
+    :spacing 15\
+    (button :onclick \"hyprctl dispatch workspace 1\" :class \"ws$o1$f1\" \"${icons[0]}\")\
+    (button :onclick \"hyprctl dispatch workspace 2\" :class \"ws$o2$f2\" \"${icons[1]}\")\
+    (button :onclick \"hyprctl dispatch workspace 3\" :class \"ws$o3$f3\" \"${icons[2]}\")\
+    (button :onclick \"hyprctl dispatch workspace 4\" :class \"ws$o4$f4\" \"${icons[3]}\")\
+    (button :onclick \"hyprctl dispatch workspace 5\" :class \"ws$o5$f5\" \"${icons[4]}\")\
+    (button :onclick \"hyprctl dispatch workspace 6\" :class \"ws$o6$f6\" \"${icons[5]}\")\
+    (button :onclick \"hyprctl dispatch workspace 7\" :class \"ws$o7$f7\" \"${icons[6]}\")\
+    (button :onclick \"hyprctl dispatch workspace 8\" :class \"ws$o8$f8\" \"${icons[7]}\")\
+    (button :onclick \"hyprctl dispatch workspace 9\" :class \"ws$o9$f9\" \"${icons[8]}\")\
+  )\
+)"
+}
+
+module
+socat -u UNIX-CONNECT:/tmp/hypr/"$HYPRLAND_INSTANCE_SIGNATURE"/.socket2.sock - | while read -r event; do 
+workspaces "$event"
+module
+done

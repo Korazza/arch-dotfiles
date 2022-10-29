@@ -1,0 +1,54 @@
+$resources-background: #0d2f3b;
+$resources-progress-background: #0d2f3b;
+$resources-progress-foreground: #5cf2c2;
+$resources-cpu-foreground: #e36965;
+$resources-temperature-foreground: #2f9ca7;
+$resources-memory-foreground: #2cbf6c;
+$resources-disk-foreground: #fab387;
+
+.widget-resources {
+
+  .progress-box {
+    background-color: $resources-background;
+    color: $resources-progress-foreground;
+    padding: 0.6em;
+    font-size: 13px;
+    border-radius: 40%;
+
+    .progress-text {
+      margin-top: 0.2em;
+      font-family: 'SpaceMono Nerd Font';
+      font-size: 15px;
+    }
+
+    .resources-progress {
+      background-color: green;
+
+
+      &.cpu {
+        color: $resources-cpu-foreground;
+        background-color: rgba($resources-cpu-foreground, 0.3);
+      }
+  
+      &.temperature {
+        color: $resources-temperature-foreground;
+        background-color: rgba($resources-temperature-foreground, 0.3);
+      }
+  
+      &.memory {
+          color: $resources-memory-foreground;
+          background-color: rgba($resources-memory-foreground, 0.3);
+      }
+  
+      &.disk {
+        color: $resources-disk-foreground;
+        background-color: rgba($resources-disk-foreground, 0.3);
+      }
+  
+      .icon {
+        padding: 2.5em;
+        font-family: 'FontAwesome 6 Free';
+      }
+    }
+  }
+}

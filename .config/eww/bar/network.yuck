@@ -1,0 +1,34 @@
+(defpoll connection_state
+  :interval "60s"
+  "bar/network state"
+)
+
+(defpoll connection_name
+  :interval "10m"
+  "bar/network name"
+)
+
+(defpoll connection_type
+  :interval "10m"
+  "bar/network type"
+)
+
+
+(defwidget network_widget []
+  (box
+    :class "bar-network"
+    :halign "end"
+    :valign "fill"
+    :space-evenly false
+    (label
+      :class "icon-network"
+      :text {
+      connection_state != "UP" ?
+      "" : connection_type == "ethernet" ?
+      "" : ""
+      }
+      :style "color: ${connection_state == 'UP' ? '#fab387' : '#e36965'}"
+    )
+    "${connection_name}"
+  )
+)

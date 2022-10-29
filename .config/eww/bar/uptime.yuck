@@ -1,0 +1,19 @@
+(defpoll uptime
+  :interval "60s"
+  "bar/uptime"
+)
+
+(defwidget uptime_widget []
+  (box
+    :class "bar-uptime"
+    :halign "end"
+    :valign "fill"
+    :space-evenly false
+    :tooltip "Up since ${uptime}"
+    (label
+      :class "icon-uptime"
+      :text ""
+    )
+    "${uptime}"
+  )
+)

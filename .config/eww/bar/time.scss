@@ -1,0 +1,44 @@
+$time-background: #0d2f3b;
+$time-foreground: #5cf2c2;
+$calendar-header: #5fcfda;
+$calendar-button: #29899e;
+$calendar-highlight: #b972dd;
+$calendar-selected: #fab387;
+$calendar-indeterminate: #299d7c;
+
+.bar-time {
+  background-color: $time-background;
+  color: $time-foreground;
+  font-family: 'SpaceMono Nerd Font';
+  font-size: 14px;
+  padding: 0.2em 0.4em;
+  border-radius: 0.6em;
+}
+
+.calendar {
+  font-family: 'Roboto';
+  background-color: $time-background;
+  color: $time-foreground;
+  border-radius: 0.6em;
+
+  &.button {
+    color: $calendar-button;
+  }
+
+  &.header {
+    color: $calendar-header;
+  }
+
+  &.highlight {
+    color: $calendar-highlight;
+  }
+
+  calendar:selected {
+    color: $calendar-selected;
+  }
+    
+
+  &:indeterminate {
+    color: $calendar-indeterminate;
+  }
+}

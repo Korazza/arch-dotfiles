@@ -1,0 +1,115 @@
+(defpoll cpu
+  :interval "2s"
+  `read cpu a b c previdle rest < /proc/stat
+  prevtotal=$((a+b+c+previdle))
+  sleep 0.5
+  read cpu a b c idle rest < /proc/stat
+  total=$((a+b+c+idle))
+  echo $((100*((total-prevtotal)-(idle-previdle))/(total-prevtotal)))`
+)
+
+(defpoll temperature
+  :interval "2s"
+  `cat /sys/class/thermal/thermal_zone2/temp | awk '{print ($1/10-200)/90}'`
+)
+
+(defpoll memory
+  :interval "2s"
+  `free -m | grep Mem | awk '{print ($3/$2)*100}'`
+)
+
+(defpoll disk
+  :interval "2s"
+  `df --output=pcent / | grep -Eo '[0-9]{1,2}'`
+)
+
+(defwidget resources_widget []
+  (box
+    :class "widget-resources"
+    :orientation "v"
+    :halign "start"
+    :valign "start"
+    :spacing 15
+    (box
+      :class "progress-box"
+      :orientation "v"
+      :halign "start"
+      :valign "start"
+      :space-evenly false
+      (circular-progress
+        :class "resources-progress cpu"
+        :value cpu
+        :thickness 4
+        (button
+          :class "icon cpu"
+          " CPU"
+        )
+      )
+      (label
+        :class "progress-text"
+        :text "${cpu}%"
+      )
+    )
+    (box
+      :class "progress-box"
+      :orientation "v"
+      :halign "start"
+      :valign "start"
+      :space-evenly false
+      (circular-progress
+        :class "resources-progress temperature"
+        :value temperature
+        :thickness 4
+        (button
+          :class "icon temperature"
+          " TEMP"
+        )
+      )
+      (label
+        :class "progress-text"
+        :text "${round(temperature, 0)}°C"
+      )
+    )
+    (box
+      :class "progress-box"
+      :orientation "v"
+      :halign "start"
+      :valign "start"
+      :space-evenly false
+      (circular-progress
+        :class "resources-progress memory"
+        :value memory
+        :thickness 4
+        (button
+          :class "icon memory"
+          " RAM"
+        )
+      )
+      (label
+        :class "progress-text"
+        :text "${round(memory, 0)}%"
+      )
+    )
+    (box
+      :class "progress-box"
+      :orientation "v"
+      :halign "start"
+      :valign "start"
+      :space-evenly false
+      (circular-progress
+        :class "resources-progress disk"
+        :value disk
+        :thickness 4
+        (button
+          :class "icon disk"
+          " DISK"
+        )
+      )
+      (label
+        :class "progress-text"
+        :text "${disk}%"
+      )
+    )
+  )
+)
+

@@ -1,0 +1,13 @@
+(defwidget powerbutton_widget []
+  (box
+    :class "bar-powerbutton"
+    :halign "end"
+    :valign "fill"
+    :space-evenly false
+    (button
+      :class "icon-powerbutton"
+      :onclick `eww open-many powermenu0 powermenu1`
+      ""
+    )
+  )
+)

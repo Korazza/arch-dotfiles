@@ -1,0 +1,47 @@
+(defpoll volume
+  :interval "500ms"
+`pamixer --get-volume`)
+
+(defpoll muted
+  :interval "500ms"
+`pamixer --get-mute`)
+
+(defvar reveal-audio-scale false)
+
+(defwidget audio_widget []
+  (box
+    :class "bar-audio"
+    :halign "end"
+    :valign "fill"
+    :space-evenly false
+    (button
+      :class "icon-audio${muted ? ' muted' : ''}"
+      :onclick "pamixer --toggle-mute"
+      :onrightclick "exec pavucontrol &"
+      {muted ? "" : ""}
+    )
+    (eventbox
+      :onhover "eww update reveal-audio-scale=true"
+      :onhoverlost "eww update reveal-audio-scale=false"
+      (box
+        :valign "fill"
+        :space-evenly false
+        "${volume}%"
+        (revealer
+          :reveal reveal-audio-scale
+          :transition "slideleft"
+          :duration "250ms"
+          (scale
+            :class "audio-slider"
+            :orientation "h"
+            :value volume
+            :round-digits 0
+            :min 0
+            :max 101
+            :onchange `pamixer --set-volume {}`
+          )
+        )
+      )
+    )
+  )
+)

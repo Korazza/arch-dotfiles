@@ -1,0 +1,76 @@
+(include "./bar/workspaces.yuck")
+(include "./bar/time.yuck")
+(include "./bar/music.yuck")
+(include "./bar/uptime.yuck")
+(include "./bar/audio.yuck")
+(include "./bar/bluetooth.yuck")
+(include "./bar/network.yuck")
+(include "./bar/powerbutton.yuck")
+
+(defwindow bar0
+  :monitor 0
+  :geometry (geometry
+    :anchor "top center"
+    :x "0%"
+    :y "0%"
+    :width "100%"
+    :height "32px"
+  )
+  :stacking "fg"
+  :exclusive true
+  :focusable false
+  (bar)
+)
+
+(defwindow bar1
+  :monitor 1
+  :geometry (geometry
+    :anchor "top center"
+    :x "0%"
+    :y "0%"
+    :width "100%"
+    :height "32px"
+  )
+  :stacking "fg"
+  :exclusive true
+  :focusable false
+  (bar)
+)
+
+(defwidget bar []
+  (box
+    :class "bar"
+    :orientation "h"
+    :hexpand true
+    :halign "fill"
+    :valign "fill"
+    :space-evenly false
+    (centerbox
+      :hexpand true
+      :orientation "h"
+      (box
+        :halign "start"
+        :valign "fill"
+        :space-evenly false
+        (workspaces_widget)
+      )
+      (box
+        :valign "fill"
+        :space-evenly false
+        (time_widget)
+      )
+      (box
+        :hexpand true
+        :halign "fill"
+        :valign "fill"
+        :space-evenly false
+        (music_widget)
+        (uptime_widget)
+        (audio_widget)
+        (bluetooth_widget)
+        (network_widget)
+        (powerbutton_widget)
+      )
+    )
+  )
+)

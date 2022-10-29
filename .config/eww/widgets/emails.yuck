@@ -1,0 +1,18 @@
+(defpoll emails_unread
+  :interval "30m"
+  "widgets/emails"
+)
+
+(defwidget emails_widget []
+  (box
+    :class "widget-emails"
+    :halign "center"
+    :valign "start"
+    :space-evenly false
+    (label
+      :class "icon-email"
+      :text ""
+    )
+    "${emails_unread}"
+  )
+)

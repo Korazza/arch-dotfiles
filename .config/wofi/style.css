@@ -1,0 +1,41 @@
+* {
+  outline: none;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+window {
+  background-color: rgba(24, 24, 27, 0.72);
+  border-radius: 1.2em;
+  font-family: 'SpaceMono Nerd Font';
+}
+
+#outer-box {
+  margin: 1em;
+}
+
+#input {
+  margin-bottom: 0.8em;
+  color: #29899e;
+  font-size: 16px;
+}
+
+#text {
+  margin: 0.4em;
+  color: #5cf2c2;
+  font-size: 16px;
+}
+
+#entry {
+  color: #29899e;
+}
+
+
+#text:selected {
+  color: #2cbf6c;
+}
+
+#entry:selected {
+  background-color: rgba(68, 64, 60, 0.62);
+  color: #2cbf6c;
+}

@@ -1,0 +1,15 @@
+$powerbutton-background: #0d2f3b;
+$powerbutton-icon: #c14743;
+
+.bar-powerbutton {
+  background-color: $powerbutton-background;
+  padding: 0.6em;
+  border-radius: 0.6em;
+
+
+  .icon-powerbutton {
+    font-family: 'FontAwesome 6 Free';
+    font-size: 16px;
+    color: $powerbutton-icon;
+  }
+}

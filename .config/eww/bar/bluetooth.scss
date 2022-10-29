@@ -1,0 +1,19 @@
+$bluetooth-background: #0d2f3b;
+$bluetooth-foreground: #5cf2c2;
+$bluetooth-icon: #4babbf;
+
+.bar-bluetooth {
+  background-color: $bluetooth-background;
+  color: $bluetooth-foreground;
+  font-family: 'SpaceMono Nerd Font';
+  padding: 0.4em 0.6em;
+  margin-right: 15px;
+  border-radius: 0.6em;
+
+  .icon-bluetooth {
+    font-family: 'FontAwesome 6 Free';
+    margin-right: 0.4em;
+    font-size: 16px;
+    color: $bluetooth-icon;
+  }
+}
