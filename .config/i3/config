@@ -10,6 +10,7 @@ font pango:Fira Sans Regular 10
 # start services
 exec --no-startup-id dex --autostart --environment i3q
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n
+exec udiskie
 exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf --experimental-backends
 exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
