@@ -1,7 +1,7 @@
 {
   "name": "dotfiles",
   "version": "0.0.0",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "cz-conventional-changelog": "3.3.0"
   },
